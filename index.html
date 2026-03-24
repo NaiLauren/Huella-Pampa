@@ -3,689 +3,455 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huella Pampa | Quesos Artesanales Premium | Chivilcoy</title>
-    <meta name="description" content="Quesos artesanales de calidad excepcional. Cremoso, Port Salut, Tybo, Muzzarella, Masa para Muzzarella. Medalla de Plata. Delivery en Chivilcoy.">
+    <title>Huella Pampa | Quesos Artesanales | Chivilcoy</title>
+    <meta name="description" content="Quesos artesanales de calidad excepcional. Cremoso, Port Salut, Tybo, Muzzarella, Masa para Muzzarella. Medalla de Plata Nacional. Chivilcoy, Buenos Aires.">
     <meta property="og:title" content="Huella Pampa - Quesos Artesanales">
-    <meta property="og:description" content="Calidad al mejor precio. Entrega hoy mismo.">
+    <meta property="og:description" content="Calidad al mejor precio. Hoy mismo en tu mesa. 🧀">
     <meta property="og:type" content="website">
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            color: #2c2c2c;
-            line-height: 1.6;
-            background: #fafafa;
-        }
-        
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #2c2c2c; background: #fafafa; }
+
+        @keyframes fadeInDown { from { opacity:0; transform:translateY(-30px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeInUp   { from { opacity:0; transform:translateY(40px); }  to { opacity:1; transform:translateY(0); } }
+        @keyframes pulse      { 0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); } 70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); } }
+        @keyframes float      { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+        @keyframes shimmer    { 0% { background-position:-400px 0; } 100% { background-position:400px 0; } }
+
+        /* NAV */
         nav {
             background: white;
-            padding: 16px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            animation: fadeInDown 0.6s ease;
+            padding: 14px 24px;
+            position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            display: flex; justify-content: space-between; align-items: center;
+            animation: fadeInDown .5s ease;
         }
-        
-        .logo {
-            font-size: 22px;
-            font-weight: 800;
-            color: #1a5f3f;
-        }
-        
-        .contact-nav a {
-            padding: 10px 20px;
-            border-radius: 8px;
-            background: #25d366;
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
+        .nav-logo { font-size: 20px; font-weight: 800; color: #1a5f3f; letter-spacing: -0.5px; }
+        .nav-cta {
+            background: #25d366; color: white; text-decoration: none;
+            padding: 10px 22px; border-radius: 50px; font-weight: 700; font-size: 13px;
             animation: pulse 2s infinite;
+            transition: transform .2s;
         }
-        
-        .contact-nav a:hover {
-            background: #1ecc5a;
-            animation: none;
-        }
-        
+        .nav-cta:hover { transform: scale(1.05); animation: none; background: #1ecc5a; }
+
+        /* HERO */
         .hero {
-            background: linear-gradient(135deg, #1a5f3f 0%, #2d8a57 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(145deg, #0f3d27 0%, #1a5f3f 50%, #2d8a57 100%);
+            color: white; text-align: center;
+            padding: 90px 20px 80px;
+            position: relative; overflow: hidden;
         }
-        
         .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+            content:'';
+            position:absolute; top:-60px; right:-80px;
+            width:400px; height:400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%);
+            border-radius:50%;
+            animation: float 7s ease-in-out infinite;
         }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
+        .hero::after {
+            content:'';
+            position:absolute; bottom:-80px; left:-60px;
+            width:350px; height:350px;
+            background: radial-gradient(circle, rgba(255,193,7,0.08) 0%, transparent 70%);
+            border-radius:50%;
+            animation: float 9s ease-in-out infinite reverse;
         }
-        
-        .hero h1 {
-            font-size: 56px;
-            margin-bottom: 16px;
-            font-weight: 800;
+        .hero-inner { position:relative; z-index:1; max-width:700px; margin:0 auto; animation: fadeInUp .7s ease both; }
+        .hero-badge {
+            display:inline-block;
+            background: rgba(255,193,7,0.15); border: 1.5px solid rgba(255,193,7,.5); color:#ffd54f;
+            padding: 8px 20px; border-radius:50px; font-size:12px; font-weight:700;
+            letter-spacing:.5px; margin-bottom:20px;
         }
-        
-        .hero .tagline {
-            font-size: 20px;
-            margin-bottom: 24px;
-            opacity: 0.95;
-        }
-        
-        .hero .badge {
-            display: inline-block;
-            background: rgba(255,193,7,0.2);
-            color: #ffc107;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            border: 2px solid rgba(255,193,7,0.4);
-            animation: pulse 2s infinite;
-        }
-        
-        .cta-group {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
+        .hero h1 { font-size:52px; font-weight:900; line-height:1.1; margin-bottom:16px; letter-spacing:-1px; }
+        .hero h1 span { color:#ffd54f; }
+        .hero p { font-size:18px; opacity:.9; margin-bottom:36px; line-height:1.6; }
+        .hero-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
         .btn {
-            padding: 16px 36px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
+            padding:15px 34px; border-radius:50px; font-weight:700; font-size:15px;
+            text-decoration:none; transition:all .3s ease; display:inline-block; border:none; cursor:pointer;
         }
-        
-        .btn-primary {
-            background: #ffc107;
-            color: #1a5f3f;
-            box-shadow: 0 4px 20px rgba(255, 193, 7, 0.4);
-        }
-        
-        .btn-primary:hover {
-            background: #ffb300;
-            transform: translateY(-3px);
-        }
-        
-        .btn-secondary {
-            background: rgba(255,255,255,0.15);
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #1a5f3f;
-            transform: translateY(-3px);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .btn-yellow { background:#ffc107; color:#1a5f3f; box-shadow:0 6px 24px rgba(255,193,7,.4); }
+        .btn-yellow:hover { background:#ffb300; transform:translateY(-3px); box-shadow:0 10px 30px rgba(255,193,7,.5); }
+        .btn-outline { background:transparent; color:white; border:2px solid rgba(255,255,255,.7); }
+        .btn-outline:hover { background:white; color:#1a5f3f; transform:translateY(-3px); }
+
+        /* GALLERY HERO */
+        .hero-gallery {
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap:10px;
+            margin-top:50px;
             padding: 0 20px;
+            max-width:900px;
+            margin-left:auto; margin-right:auto;
         }
-        
-        section {
-            padding: 80px 20px;
+        .hero-gallery .main-img {
+            grid-column: span 2;
+            height:280px;
         }
-        
-        section h2 {
-            font-size: 42px;
-            margin-bottom: 60px;
-            text-align: center;
-            color: #1a5f3f;
-            font-weight: 800;
+        .hero-gallery .side-img { height:280px; }
+        .hero-gallery img {
+            width:100%; height:100%; object-fit:cover;
+            border-radius:16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            transition:transform .3s ease;
         }
-        
-        .stats {
-            background: white;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            padding: 50px 40px;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-            margin-bottom: 80px;
+        .hero-gallery img:hover { transform:scale(1.02); }
+
+        /* CONTAINER */
+        .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+
+        /* STATS */
+        .stats-row {
+            display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
+            background:white; border-radius:20px; padding:36px 40px;
+            box-shadow:0 8px 40px rgba(0,0,0,0.1);
+            margin: -40px auto 70px; max-width:900px;
+            position:relative; z-index:10;
         }
-        
-        .stat-number {
-            font-size: 44px;
-            font-weight: 800;
-            color: #1a5f3f;
-            margin-bottom: 8px;
+        .stat { text-align:center; }
+        .stat-num { font-size:40px; font-weight:900; color:#1a5f3f; }
+        .stat-lbl { font-size:12px; color:#888; text-transform:uppercase; font-weight:600; letter-spacing:.5px; margin-top:4px; }
+
+        /* SECTION TITLE */
+        .section-title {
+            text-align:center; font-size:38px; font-weight:900;
+            color:#1a5f3f; margin-bottom:12px;
         }
-        
-        .stat-label {
-            font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-            font-weight: 600;
+        .section-sub {
+            text-align:center; color:#777; font-size:16px; margin-bottom:50px;
         }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            margin-bottom: 80px;
+
+        /* PHOTO GALLERY SECTION */
+        .gallery-section { padding:70px 20px; }
+        .photo-grid {
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap:14px;
         }
-        
-        .product {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            animation: fadeInUp 0.8s ease both;
+        .photo-grid .photo-big { grid-column:span 2; grid-row:span 2; }
+        .photo-item {
+            border-radius:16px; overflow:hidden;
+            box-shadow:0 4px 16px rgba(0,0,0,0.12);
+            transition:all .4s ease;
+            position:relative;
         }
-        
-        .product:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+        .photo-item:hover { transform:translateY(-6px); box-shadow:0 12px 32px rgba(0,0,0,0.2); }
+        .photo-item img { width:100%; height:100%; object-fit:cover; min-height:200px; display:block; }
+        .photo-big img { min-height:420px; }
+        .photo-overlay {
+            position:absolute; inset:0;
+            background:linear-gradient(to top, rgba(26,95,63,.8) 0%, transparent 50%);
+            opacity:0; transition:opacity .3s ease;
+            display:flex; align-items:flex-end; padding:20px;
         }
-        
-        .product-image {
-            width: 100%;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 140px;
-            font-weight: 800;
-            transition: all 0.4s ease;
+        .photo-item:hover .photo-overlay { opacity:1; }
+        .photo-overlay-text { color:white; font-weight:700; font-size:14px; }
+
+        /* PRODUCTS */
+        .products-section { padding:70px 20px; background:#f5f5f5; }
+        .products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:28px; }
+        .product-card {
+            background:white; border-radius:20px; overflow:hidden;
+            box-shadow:0 4px 20px rgba(0,0,0,0.08);
+            transition:all .4s ease;
         }
-        
-        .product:nth-child(1) .product-image { background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%); }
-        .product:nth-child(2) .product-image { background: linear-gradient(135deg, #f5deb3 0%, #f0d089 100%); }
-        .product:nth-child(3) .product-image { background: linear-gradient(135deg, #ffd9b3 0%, #ffb366 100%); }
-        .product:nth-child(4) .product-image { background: linear-gradient(135deg, #e6f3ff 0%, #cce5ff 100%); }
-        .product:nth-child(5) .product-image { background: linear-gradient(135deg, #fff0f5 0%, #ffe4f0 100%); }
-        
-        .product-content {
-            padding: 32px 28px;
+        .product-card:hover { transform:translateY(-10px); box-shadow:0 16px 40px rgba(0,0,0,0.15); }
+        .product-card.featured { border:3px solid #ffc107; }
+        .product-img {
+            height:220px; display:flex; align-items:center; justify-content:center;
+            font-size:80px; position:relative; overflow:hidden;
         }
-        
-        .product-name {
-            font-size: 24px;
-            font-weight: 800;
-            color: #1a5f3f;
-            margin-bottom: 8px;
+        .p1 { background:linear-gradient(135deg,#fff8dc,#ffe89c); }
+        .p2 { background:linear-gradient(135deg,#fff3cd,#ffd966); }
+        .p3 { background:linear-gradient(135deg,#ffe4b5,#f4a634); }
+        .p4 { background:linear-gradient(135deg,#e8f4f8,#b8d4e8); }
+        .p5 { background:linear-gradient(135deg,#fff0f5,#ffc0d9); }
+        .product-body { padding:24px; }
+        .product-name { font-size:20px; font-weight:800; color:#1a5f3f; margin-bottom:8px; }
+        .product-desc { font-size:13px; color:#666; line-height:1.7; }
+        .product-tag {
+            display:inline-block; margin-top:12px;
+            background:#ffc107; color:#1a5f3f;
+            padding:4px 12px; border-radius:50px; font-size:11px; font-weight:800;
         }
-        
-        .product-desc {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
+
+        /* WHY US */
+        .whyus-section { padding:70px 20px; }
+        .whyus-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:36px; }
+        .whyus-item { text-align:center; animation:float 4s ease-in-out infinite; }
+        .whyus-item:nth-child(2) { animation-delay:.5s; }
+        .whyus-item:nth-child(3) { animation-delay:1s; }
+        .whyus-item:nth-child(4) { animation-delay:1.5s; }
+        .whyus-icon { font-size:52px; margin-bottom:14px; }
+        .whyus-title { font-size:18px; font-weight:800; color:#1a5f3f; margin-bottom:8px; }
+        .whyus-text { font-size:14px; color:#777; line-height:1.7; }
+
+        /* AWARDS */
+        .awards-section {
+            padding:70px 20px;
+            background:linear-gradient(135deg,#fff9e0,#fffcf0);
+            border-top:4px solid #ffc107; border-bottom:4px solid #ffc107;
         }
-        
-        .product-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            padding-top: 20px;
-            border-top: 2px solid #eee;
-        }
-        
-        .detail {
-            font-size: 12px;
-            color: #1a5f3f;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        
-        .highlight-badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #1a5f3f;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 800;
-            margin-top: 12px;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-        
-        .feature {
-            text-align: center;
-        }
-        
-        .feature-icon {
-            font-size: 56px;
-            margin-bottom: 16px;
-            animation: bounce 3s infinite;
-        }
-        
-        .feature-title {
-            font-size: 20px;
-            font-weight: 800;
-            color: #1a5f3f;
-            margin-bottom: 12px;
-        }
-        
-        .feature-text {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.8;
-        }
-        
-        .awards {
-            background: linear-gradient(135deg, #fff9e6 0%, #fffaf0 100%);
-            border-radius: 16px;
-            padding: 60px 40px;
-            margin-bottom: 80px;
-            border: 3px solid #ffc107;
-        }
-        
-        .awards h3 {
-            text-align: center;
-            color: #1a5f3f;
-            margin-bottom: 48px;
-            font-size: 28px;
-            font-weight: 800;
-        }
-        
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 32px;
-        }
-        
+        .awards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; }
         .award-card {
-            background: white;
-            padding: 32px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
+            background:white; border-radius:20px; padding:36px 28px; text-align:center;
+            box-shadow:0 4px 16px rgba(0,0,0,.08); transition:all .4s ease;
         }
-        
-        .award-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-        }
-        
-        .award-icon {
-            font-size: 60px;
-            margin-bottom: 16px;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .award-title {
-            font-size: 18px;
-            font-weight: 800;
-            color: #1a5f3f;
-            margin-bottom: 8px;
-        }
-        
-        .award-desc {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.8;
-        }
-        
-        .diploma-image {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            margin: 24px 0;
-            border: 2px solid #ddd;
-        }
-        
-        .diploma-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        
+        .award-card:hover { transform:translateY(-8px); box-shadow:0 12px 36px rgba(0,0,0,.15); }
+        .award-icon { font-size:60px; margin-bottom:16px; animation:float 3s ease-in-out infinite; }
+        .award-title { font-size:18px; font-weight:800; color:#1a5f3f; margin-bottom:10px; }
+        .award-desc { font-size:13px; color:#666; line-height:1.8; }
+
+        /* CTA FINAL */
         .cta-section {
-            background: linear-gradient(135deg, #1a5f3f 0%, #2d8a57 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            border-radius: 16px;
-            margin-bottom: 80px;
+            background:linear-gradient(145deg,#0f3d27,#1a5f3f,#2d8a57);
+            color:white; text-align:center; padding:80px 20px;
+            position:relative; overflow:hidden;
         }
-        
-        .cta-section h2 {
-            color: white;
+        .cta-section::before {
+            content:''; position:absolute; top:-40%; right:-10%;
+            width:500px; height:500px;
+            background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);
+            border-radius:50%; animation:float 8s ease-in-out infinite;
         }
-        
-        .cta-section p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            opacity: 0.95;
+        .cta-section > * { position:relative; z-index:1; }
+        .cta-section h2 { font-size:40px; font-weight:900; margin-bottom:12px; }
+        .cta-section p { font-size:18px; opacity:.9; margin-bottom:40px; }
+        .cta-contacts {
+            display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+            gap:20px; max-width:700px; margin:0 auto 40px;
         }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
+        .cta-item {
+            background:rgba(255,255,255,.12); border:1.5px solid rgba(255,255,255,.2);
+            border-radius:14px; padding:20px; transition:all .3s ease;
         }
-        
-        .contact-item {
-            background: rgba(255,255,255,0.12);
-            padding: 24px;
-            border-radius: 12px;
-            border: 2px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
+        .cta-item:hover { background:rgba(255,255,255,.2); transform:translateY(-4px); }
+        .cta-label { font-size:11px; text-transform:uppercase; letter-spacing:1px; opacity:.7; margin-bottom:8px; }
+        .cta-value { font-size:17px; font-weight:700; }
+        .share-row { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:32px; }
+        .share-btn {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:11px 22px; border-radius:50px;
+            background:rgba(255,255,255,.15); border:1.5px solid rgba(255,255,255,.25);
+            color:white; font-size:13px; font-weight:700; text-decoration:none;
+            transition:all .3s ease;
         }
-        
-        .contact-item:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-4px);
-        }
-        
-        .contact-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.8;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .contact-value {
-            font-size: 20px;
-            font-weight: 700;
-        }
-        
-        .social-share {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background: rgba(255,255,255,0.15);
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-        
-        .social-btn:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-3px);
-        }
-        
+        .share-btn:hover { background:rgba(255,255,255,.25); transform:translateY(-3px); }
+
+        /* FOOTER */
         footer {
-            background: #2c2c2c;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 13px;
-            margin-top: 80px;
+            background:#1a1a1a; color:#aaa; text-align:center;
+            padding:32px 20px; font-size:13px; line-height:2;
         }
-        
-        footer p {
-            margin-bottom: 8px;
-            opacity: 0.8;
-        }
-        
-        @media (max-width: 768px) {
-            .hero { min-height: auto; padding: 60px 20px; }
-            .hero h1 { font-size: 36px; }
-            section h2 { font-size: 28px; margin-bottom: 40px; }
-            .products-grid { grid-template-columns: 1fr; gap: 20px; }
-            .features { grid-template-columns: 1fr; gap: 24px; }
-            section { padding: 40px 20px; }
+        footer strong { color:white; }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .hero h1 { font-size:34px; }
+            .hero p { font-size:15px; }
+            .hero-gallery { grid-template-columns:1fr 1fr; }
+            .hero-gallery .main-img { grid-column:span 2; height:200px; }
+            .hero-gallery .side-img { height:140px; }
+            .stats-row { grid-template-columns:repeat(2,1fr); gap:16px; padding:24px; margin-top:-30px; }
+            .photo-grid { grid-template-columns:1fr 1fr; }
+            .photo-grid .photo-big { grid-column:span 2; }
+            .photo-big img { min-height:260px; }
+            .section-title { font-size:28px; }
+            .cta-section h2 { font-size:28px; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">🧀 HUELLA PAMPA</div>
-        <div class="contact-nav">
-            <a href="#contacto">📞 Pedir Ya</a>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-logo">🧀 Huella Pampa</div>
+    <a href="https://wa.me/542346513496?text=Hola!%20Quiero%20pedir%20quesos%20Huella%20Pampa%20🧀" class="nav-cta">📲 Pedir Ya</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-badge">🥈 Medalla de Plata — Concurso Nacional de Quesos 2019</div>
+        <h1>Quesos <span>Artesanales</span><br>de Calidad Superior</h1>
+        <p>Producción familiar desde Chivilcoy. Cada queso elaborado con dedicación, leche fresca y recetas que se pasan de generación en generación.</p>
+        <div class="hero-ctas">
+            <a href="https://wa.me/542346513496?text=Hola!%20Me%20interesa%20hacer%20un%20pedido%20🧀" class="btn btn-yellow">📱 Hacer un Pedido</a>
+            <a href="#productos" class="btn btn-outline">Ver Productos ↓</a>
         </div>
-    </nav>
-    
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="badge">🥈 Medalla de Plata - Concurso Nacional 2019</div>
-            <h1>Quesos Artesanales Premium</h1>
-            <p class="tagline">Producción artesanal de calidad excepcional. Cada queso hecho con dedicación.</p>
-            <div class="cta-group">
-                <a href="https://wa.me/542346513496?text=Hola!%20Quiero%20pedir%20quesos%20Huella%20Pampa" class="btn btn-primary">📱 Pedir Ahora</a>
-                <a href="#productos" class="btn btn-secondary">Ver Productos</a>
-            </div>
-        </div>
-    </section>
-    
-    <div class="container">
-        <!-- Stats -->
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-number">30+</div>
-                <div class="stat-label">Años Produciendo</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Artesanal</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">1000+</div>
-                <div class="stat-label">Clientes Felices</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">5</div>
-                <div class="stat-label">Variedades</div>
-            </div>
-        </div>
-        
-        <!-- Productos -->
-        <section id="productos">
-            <h2>Nuestros Productos</h2>
-            <div class="products-grid">
-                <div class="product">
-                    <div class="product-image">🟨</div>
-                    <div class="product-content">
-                        <div class="product-name">Cremoso</div>
-                        <p class="product-desc">Suave, digestible y versátil. Perfecto para desayuno, merienda o pan casero.</p>
-                        <div class="product-details">
-                            <div class="detail">Pasta Blanda</div>
-                            <div class="detail">Muy Cremoso</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product">
-                    <div class="product-image">🟨</div>
-                    <div class="product-content">
-                        <div class="product-name">Port Salut</div>
-                        <p class="product-desc">Equilibrio perfecto. Ideal para tabla de quesos, sándwich gourmet o comer solo.</p>
-                        <div class="product-details">
-                            <div class="detail">Pasta Semidura</div>
-                            <div class="detail">Con/Sin Sal</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product">
-                    <div class="product-image">🧡</div>
-                    <div class="product-content">
-                        <div class="product-name">Tybo</div>
-                        <p class="product-desc">Sabor robusto e intenso. Excelente para sándwich, fondue y tabla de quesos.</p>
-                        <div class="product-details">
-                            <div class="detail">Pasta Dura</div>
-                            <div class="detail">Sabor Intenso</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product">
-                    <div class="product-image">🔵</div>
-                    <div class="product-content">
-                        <div class="product-name">Muzzarella</div>
-                        <p class="product-desc">Fresca, elástica y derretible. La opción clásica para pizza, lasaña y recetas.</p>
-                        <div class="product-details">
-                            <div class="detail">Pasta Fresca</div>
-                            <div class="detail">Derretible</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product">
-                    <div class="product-image">💎</div>
-                    <div class="product-content">
-                        <div class="product-name">Masa para Muzzarella</div>
-                        <p class="product-desc"><strong>🌟 NUESTRO MAYOR ORGULLO</strong><br>Reconocida por su sabor y rendimiento inigualables. Para los más exigentes.</p>
-                        <div class="product-details">
-                            <div class="detail">Pasta Prima</div>
-                            <div class="detail">Premium</div>
-                        </div>
-                        <div class="highlight-badge">⭐ PRODUCTO ESTRELLA</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Por qué elegir -->
-        <section>
-            <h2>¿Por Qué Huella Pampa?</h2>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">✨</div>
-                    <div class="feature-title">Artesanal 100%</div>
-                    <p class="feature-text">Hecho a mano con recetas familiares. Sin aditivos ni conservantes.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🥛</div>
-                    <div class="feature-title">Ingredientes Premium</div>
-                    <p class="feature-text">Solo leche fresca de los mejores productores. Cero compromisos.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🏅</div>
-                    <div class="feature-title">Premiados</div>
-                    <p class="feature-text">Reconocidos nacionalmente. Medalla de Plata en Concurso Nacional.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">💰</div>
-                    <div class="feature-title">Calidad al Mejor Precio</div>
-                    <p class="feature-text">Producción directa. Sin intermediarios. Precio justo garantizado.</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Awards -->
-        <section>
-            <div class="awards">
-                <h3>🏆 Reconocimientos Oficiales</h3>
-                <div class="awards-grid">
-                    <div class="award-card">
-                        <div class="award-icon">🥈</div>
-                        <div class="award-title">Medalla de Plata</div>
-                        <p class="award-desc"><strong>XV Concurso Nacional de Quesos</strong><br>ExpoSuipacha 2019<br>Categoría Pasta Blanca</p>
-                    </div>
-                    <div class="award-card">
-                        <div class="award-icon">📜</div>
-                        <div class="award-title">Diploma de Reconocimiento</div>
-                        <p class="award-desc"><strong>Ministerio de Desarrollo Agrario</strong><br>Provincia de Buenos Aires<br>Por Excelencia Artesanal</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
-    
-    <!-- CTA Final -->
-    <section class="cta-section" id="contacto">
-        <h2>¿Listo para Probar?</h2>
-        <p>Hoy mismo en tu mesa. Contactanos ahora.</p>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <div class="contact-label">📞 WhatsApp</div>
-                <div class="contact-value">2346513496</div>
+    <div class="hero-gallery">
+        <div class="main-img"><img src="img/quesos2.jpg" alt="Quesos Huella Pampa"></div>
+        <div class="side-img"><img src="img/quesos1.jpg" alt="Quesos Artesanales"></div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- STATS -->
+    <div class="stats-row">
+        <div class="stat"><div class="stat-num">30+</div><div class="stat-lbl">Años de Tradición</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Artesanal</div></div>
+        <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Variedades</div></div>
+        <div class="stat"><div class="stat-num">🥈</div><div class="stat-lbl">Premio Nacional</div></div>
+    </div>
+</div>
+
+<!-- FOTO GALERÍA -->
+<section class="gallery-section">
+    <div class="container">
+        <h2 class="section-title">Nuestros Quesos</h2>
+        <p class="section-sub">Elaborados con leche fresca y recetas familiares. Sin aditivos ni conservantes.</p>
+        <div class="photo-grid">
+            <div class="photo-item photo-big">
+                <img src="img/quesos3.jpg" alt="Quesos artesanales Huella Pampa">
+                <div class="photo-overlay"><span class="photo-overlay-text">Producción artesanal familiar 🏡</span></div>
             </div>
-            <div class="contact-item">
-                <div class="contact-label">📍 Ubicación</div>
-                <div class="contact-value">Gorostiaga, Buenos Aires</div>
+            <div class="photo-item">
+                <img src="img/quesos4.jpg" alt="Quesos Chivilcoy">
+                <div class="photo-overlay"><span class="photo-overlay-text">Cremoso & Port Salut 🧀</span></div>
             </div>
-            <div class="contact-item">
-                <div class="contact-label">📷 Instagram</div>
-                <div class="contact-value">@Lacteoshuellapampa</div>
+            <div class="photo-item">
+                <img src="img/quesos5.jpg" alt="Quesos premium">
+                <div class="photo-overlay"><span class="photo-overlay-text">Calidad al mejor precio 💚</span></div>
             </div>
         </div>
-        
-        <a href="https://wa.me/542346513496?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20quesos%20Huella%20Pampa" class="btn btn-primary">Enviar Mensaje por WhatsApp</a>
-        
-        <div class="social-share">
-            <a href="https://wa.me/?text=Descubrí%20estos%20quesos%20increíbles:%20Huella%20Pampa%20-%20https://nailauuren.github.io/Huella-Pampa/" class="social-btn" target="_blank">🟢 Compartir en WhatsApp</a>
-            <a href="https://www.instagram.com/lacteoshuellapampa/" class="social-btn" target="_blank">📷 Seguir en Instagram</a>
+    </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="products-section" id="productos">
+    <div class="container">
+        <h2 class="section-title">Lo que Producimos</h2>
+        <p class="section-sub">Nos dedicamos a satisfacer los paladares más exigentes</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img p1">🟡</div>
+                <div class="product-body">
+                    <div class="product-name">Cremoso</div>
+                    <p class="product-desc">Suave, digestible y versátil. Perfecto para desayuno, merienda o como acompañamiento del pan casero.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img p2">🧀</div>
+                <div class="product-body">
+                    <div class="product-name">Port Salut</div>
+                    <p class="product-desc">Equilibrio perfecto de sabor y cremosidad. Disponible con y sin sal. Ideal para tabla gourmet.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img p3">🟠</div>
+                <div class="product-body">
+                    <div class="product-name">Tybo</div>
+                    <p class="product-desc">Sabor robusto e intenso. Excelente para sándwich, fondue y acompañamientos.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img p4">🔵</div>
+                <div class="product-body">
+                    <div class="product-name">Muzzarella</div>
+                    <p class="product-desc">Fresca, elástica y perfectamente derretible. La clásica para pizza y lasaña.</p>
+                </div>
+            </div>
+            <div class="product-card featured">
+                <div class="product-img p5">⭐</div>
+                <div class="product-body">
+                    <div class="product-name">Masa para Muzzarella</div>
+                    <p class="product-desc">Nuestro mayor orgullo. Reconocida por su <strong>sabor y rendimiento inigualables</strong>. Para los clientes más exigentes.</p>
+                    <span class="product-tag">⭐ PRODUCTO ESTRELLA</span>
+                </div>
+            </div>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <p><strong>Huella Pampa</strong> | Quesos Artesanales Familiares</p>
-        <p>Gorostiaga, Buenos Aires, Argentina</p>
-        <p>Calidad al mejor precio es nuestro compromiso 🧀</p>
-    </footer>
+    </div>
+</section>
+
+<!-- POR QUÉ -->
+<section class="whyus-section">
+    <div class="container">
+        <h2 class="section-title">¿Por qué Huella Pampa?</h2>
+        <p class="section-sub">Calidad al mejor precio es nuestro compromiso 🧀</p>
+        <div class="whyus-grid">
+            <div class="whyus-item">
+                <div class="whyus-icon">✨</div>
+                <div class="whyus-title">100% Artesanal</div>
+                <p class="whyus-text">Hecho a mano con recetas familiares. Sin aditivos ni conservantes.</p>
+            </div>
+            <div class="whyus-item">
+                <div class="whyus-icon">🥛</div>
+                <div class="whyus-title">Leche Fresca</div>
+                <p class="whyus-text">Solo los mejores ingredientes. Cero compromisos en calidad.</p>
+            </div>
+            <div class="whyus-item">
+                <div class="whyus-icon">🏅</div>
+                <div class="whyus-title">Premiados</div>
+                <p class="whyus-text">Reconocidos en concurso nacional. Medalla de Plata ExpoSuipacha 2019.</p>
+            </div>
+            <div class="whyus-item">
+                <div class="whyus-icon">💰</div>
+                <div class="whyus-title">Precio Justo</div>
+                <p class="whyus-text">Producción directa. Sin intermediarios. Calidad premium al mejor precio.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PREMIOS -->
+<section class="awards-section">
+    <div class="container">
+        <h2 class="section-title">🏆 Reconocimientos</h2>
+        <p class="section-sub">Avales que respaldan nuestra calidad</p>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">🥈</div>
+                <div class="award-title">Medalla de Plata</div>
+                <p class="award-desc"><strong>XV Concurso Nacional de Quesos</strong><br>ExpoSuipacha 2019<br>Categoría Pasta Blanca — Cremoso</p>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">📜</div>
+                <div class="award-title">Diploma de Reconocimiento</div>
+                <p class="award-desc"><strong>Ministerio de Desarrollo Agrario</strong><br>Provincia de Buenos Aires<br>Por Excelencia Artesanal</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" id="contacto">
+    <h2>¿Listo para Probar?</h2>
+    <p>Contactanos hoy y recibís tus quesos en el día</p>
+    <div class="cta-contacts">
+        <div class="cta-item">
+            <div class="cta-label">📞 WhatsApp</div>
+            <div class="cta-value">2346-513496</div>
+        </div>
+        <div class="cta-item">
+            <div class="cta-label">📍 Ubicación</div>
+            <div class="cta-value">Gorostiaga, Bs. As.</div>
+        </div>
+        <div class="cta-item">
+            <div class="cta-label">📷 Instagram</div>
+            <div class="cta-value">@lacteoshuellapampa</div>
+        </div>
+    </div>
+    <a href="https://wa.me/542346513496?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20quesos%20Huella%20Pampa%20🧀" class="btn btn-yellow" style="font-size:16px;padding:18px 44px;">Enviar Mensaje por WhatsApp</a>
+    <div class="share-row">
+        <a href="https://wa.me/?text=Mirá%20estos%20quesos%20artesanales:%20Huella%20Pampa%20-%20Chivilcoy%20https://nailauuren.github.io/Huella-Pampa/" class="share-btn" target="_blank">🟢 Compartir por WhatsApp</a>
+        <a href="https://www.instagram.com/lacteoshuellapampa/" class="share-btn" target="_blank">📷 Seguir en Instagram</a>
+    </div>
+</section>
+
+<footer>
+    <strong>Huella Pampa</strong> — Quesos Artesanales Familiares<br>
+    Gorostiaga, Buenos Aires, Argentina<br>
+    Calidad al mejor precio es nuestro compromiso 🧀<br>
+    <span style="font-size:11px;opacity:.5">© 2026</span>
+</footer>
+
 </body>
 </html>
