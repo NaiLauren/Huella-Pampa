@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huella Pampa | Quesos Artesanales Premium | Chivilcoy</title>
-    <meta name="description" content="Quesos artesanales de calidad superior. Producción familiar desde 1995. Medalla de Plata en Concurso Nacional. Delivery en Chivilcoy y zona.">
-    <meta name="keywords" content="quesos artesanales, quesos Chivilcoy, Port Salut, cremoso, tybo, muzzarella">
-    <meta property="og:title" content="Huella Pampa - Quesos Artesanales Premium">
-    <meta property="og:description" content="Quesos premiados. Producción artesanal familiar. Hoy mismo en tu mesa.">
+    <meta name="description" content="Quesos artesanales de calidad excepcional. Cremoso, Port Salut, Tybo, Muzzarella, Masa para Muzzarella. Medalla de Plata. Delivery en Chivilcoy.">
+    <meta property="og:title" content="Huella Pampa - Quesos Artesanales">
+    <meta property="og:description" content="Calidad al mejor precio. Entrega hoy mismo.">
     <meta property="og:type" content="website">
     
     <style>
@@ -22,78 +21,19 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             color: #2c2c2c;
             line-height: 1.6;
             background: #fafafa;
         }
         
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        /* Navbar */
         nav {
             background: white;
             padding: 16px 20px;
@@ -111,50 +51,35 @@
             font-size: 22px;
             font-weight: 800;
             color: #1a5f3f;
-            animation: fadeIn 0.8s ease 0.2s both;
-        }
-        
-        .contact-nav {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            animation: fadeIn 0.8s ease 0.3s both;
         }
         
         .contact-nav a {
             padding: 10px 20px;
             border-radius: 8px;
+            background: #25d366;
+            color: white;
             text-decoration: none;
             font-weight: 700;
             font-size: 13px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .contact-nav .whatsapp {
-            background: #25d366;
-            color: white;
             animation: pulse 2s infinite;
         }
         
-        .contact-nav .whatsapp:hover {
+        .contact-nav a:hover {
             background: #1ecc5a;
-            transform: scale(1.05);
             animation: none;
         }
         
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #1a5f3f 0%, #2d8a57 100%);
             color: white;
             padding: 80px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
             min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
         
         .hero::before {
@@ -167,42 +92,23 @@
             background: rgba(255,255,255,0.05);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
-            pointer-events: none;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite reverse;
-            pointer-events: none;
         }
         
         .hero-content {
             position: relative;
             z-index: 1;
-            animation: fadeInUp 0.8s ease 0.2s both;
         }
         
         .hero h1 {
             font-size: 56px;
             margin-bottom: 16px;
             font-weight: 800;
-            letter-spacing: -1px;
-            animation: fadeInDown 0.8s ease 0.3s both;
         }
         
         .hero .tagline {
             font-size: 20px;
             margin-bottom: 24px;
             opacity: 0.95;
-            font-weight: 300;
-            animation: fadeInUp 0.8s ease 0.4s both;
         }
         
         .hero .badge {
@@ -223,7 +129,6 @@
             gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease 0.5s both;
         }
         
         .btn {
@@ -247,11 +152,6 @@
         .btn-primary:hover {
             background: #ffb300;
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 193, 7, 0.5);
-        }
-        
-        .btn-primary:active {
-            transform: translateY(-1px);
         }
         
         .btn-secondary {
@@ -266,14 +166,12 @@
             transform: translateY(-3px);
         }
         
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        /* Section General */
         section {
             padding: 80px 20px;
         }
@@ -284,10 +182,8 @@
             text-align: center;
             color: #1a5f3f;
             font-weight: 800;
-            animation: fadeInDown 0.8s ease both;
         }
         
-        /* Stats */
         .stats {
             background: white;
             display: grid;
@@ -298,15 +194,6 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.12);
             margin-bottom: 80px;
         }
-        
-        .stat {
-            text-align: center;
-            animation: fadeInUp 0.8s ease both;
-        }
-        
-        .stat:nth-child(2) { animation-delay: 0.1s; }
-        .stat:nth-child(3) { animation-delay: 0.2s; }
-        .stat:nth-child(4) { animation-delay: 0.3s; }
         
         .stat-number {
             font-size: 44px;
@@ -319,11 +206,9 @@
             font-size: 14px;
             color: #666;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             font-weight: 600;
         }
         
-        /* Products Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -340,10 +225,6 @@
             animation: fadeInUp 0.8s ease both;
         }
         
-        .product:nth-child(2) { animation-delay: 0.1s; }
-        .product:nth-child(3) { animation-delay: 0.2s; }
-        .product:nth-child(4) { animation-delay: 0.3s; }
-        
         .product:hover {
             transform: translateY(-12px);
             box-shadow: 0 16px 48px rgba(0,0,0,0.2);
@@ -352,30 +233,19 @@
         .product-image {
             width: 100%;
             height: 280px;
-            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 140px;
-            position: relative;
+            font-weight: 800;
             transition: all 0.4s ease;
         }
         
-        .product:hover .product-image {
-            transform: scale(1.1);
-        }
-        
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        
-        .product:hover .product-image img {
-            transform: scale(1.15);
-        }
+        .product:nth-child(1) .product-image { background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%); }
+        .product:nth-child(2) .product-image { background: linear-gradient(135deg, #f5deb3 0%, #f0d089 100%); }
+        .product:nth-child(3) .product-image { background: linear-gradient(135deg, #ffd9b3 0%, #ffb366 100%); }
+        .product:nth-child(4) .product-image { background: linear-gradient(135deg, #e6f3ff 0%, #cce5ff 100%); }
+        .product:nth-child(5) .product-image { background: linear-gradient(135deg, #fff0f5 0%, #ffe4f0 100%); }
         
         .product-content {
             padding: 32px 28px;
@@ -408,10 +278,19 @@
             color: #1a5f3f;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
         
-        /* Features */
+        .highlight-badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #1a5f3f;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            margin-top: 12px;
+        }
+        
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -421,22 +300,13 @@
         
         .feature {
             text-align: center;
-            animation: fadeInUp 0.8s ease both;
         }
-        
-        .feature:nth-child(2) { animation-delay: 0.1s; }
-        .feature:nth-child(3) { animation-delay: 0.2s; }
-        .feature:nth-child(4) { animation-delay: 0.3s; }
         
         .feature-icon {
             font-size: 56px;
             margin-bottom: 16px;
             animation: bounce 3s infinite;
         }
-        
-        .feature:nth-child(2) .feature-icon { animation-delay: 0.2s; }
-        .feature:nth-child(3) .feature-icon { animation-delay: 0.4s; }
-        .feature:nth-child(4) .feature-icon { animation-delay: 0.6s; }
         
         .feature-title {
             font-size: 20px;
@@ -451,14 +321,12 @@
             line-height: 1.8;
         }
         
-        /* Awards Section */
         .awards {
             background: linear-gradient(135deg, #fff9e6 0%, #fffaf0 100%);
             border-radius: 16px;
             padding: 60px 40px;
             margin-bottom: 80px;
             border: 3px solid #ffc107;
-            animation: slideInLeft 0.8s ease;
         }
         
         .awards h3 {
@@ -482,10 +350,7 @@
             text-align: center;
             box-shadow: 0 4px 16px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
-            animation: fadeInUp 0.8s ease both;
         }
-        
-        .award-card:nth-child(2) { animation-delay: 0.2s; }
         
         .award-card:hover {
             transform: translateY(-8px);
@@ -511,7 +376,21 @@
             line-height: 1.8;
         }
         
-        /* CTA Section */
+        .diploma-image {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 24px 0;
+            border: 2px solid #ddd;
+        }
+        
+        .diploma-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
         .cta-section {
             background: linear-gradient(135deg, #1a5f3f 0%, #2d8a57 100%);
             color: white;
@@ -519,38 +398,16 @@
             text-align: center;
             border-radius: 16px;
             margin-bottom: 80px;
-            animation: slideInRight 0.8s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-        }
-        
-        .cta-section > * {
-            position: relative;
-            z-index: 1;
         }
         
         .cta-section h2 {
             color: white;
-            margin-bottom: 16px;
         }
         
         .cta-section p {
             font-size: 20px;
             margin-bottom: 40px;
             opacity: 0.95;
-            font-weight: 300;
         }
         
         .contact-info {
@@ -570,7 +427,6 @@
         
         .contact-item:hover {
             background: rgba(255,255,255,0.2);
-            border-color: rgba(255,255,255,0.4);
             transform: translateY(-4px);
         }
         
@@ -614,10 +470,8 @@
         .social-btn:hover {
             background: rgba(255,255,255,0.25);
             transform: translateY(-3px);
-            border-color: rgba(255,255,255,0.4);
         }
         
-        /* Footer */
         footer {
             background: #2c2c2c;
             color: white;
@@ -632,49 +486,13 @@
             opacity: 0.8;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero {
-                min-height: auto;
-                padding: 60px 20px;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero .tagline {
-                font-size: 16px;
-            }
-            
-            section h2 {
-                font-size: 28px;
-                margin-bottom: 40px;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                margin-bottom: 40px;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            
-            section {
-                padding: 40px 20px;
-            }
-            
-            .contact-nav {
-                gap: 8px;
-            }
-            
-            .contact-nav a {
-                padding: 8px 14px;
-                font-size: 12px;
-            }
+            .hero { min-height: auto; padding: 60px 20px; }
+            .hero h1 { font-size: 36px; }
+            section h2 { font-size: 28px; margin-bottom: 40px; }
+            .products-grid { grid-template-columns: 1fr; gap: 20px; }
+            .features { grid-template-columns: 1fr; gap: 24px; }
+            section { padding: 40px 20px; }
         }
     </style>
 </head>
@@ -683,7 +501,7 @@
     <nav>
         <div class="logo">🧀 HUELLA PAMPA</div>
         <div class="contact-nav">
-            <a href="#contacto" class="whatsapp">📞 Pedir Ya</a>
+            <a href="#contacto">📞 Pedir Ya</a>
         </div>
     </nav>
     
@@ -692,9 +510,9 @@
         <div class="hero-content">
             <div class="badge">🥈 Medalla de Plata - Concurso Nacional 2019</div>
             <h1>Quesos Artesanales Premium</h1>
-            <p class="tagline">Producción familiar desde Chivilcoy. Cada queso hecho con dedicación y los mejores ingredientes.</p>
+            <p class="tagline">Producción artesanal de calidad excepcional. Cada queso hecho con dedicación.</p>
             <div class="cta-group">
-                <a href="https://wa.me/542346513496?text=Hola!%20Me%20interesa%20conocer%20más%20sobre%20los%20quesos%20Huella%20Pampa.%20¿Cuáles%20tienen%20disponibles?" class="btn btn-primary">📱 Pedir Ahora por WhatsApp</a>
+                <a href="https://wa.me/542346513496?text=Hola!%20Quiero%20pedir%20quesos%20Huella%20Pampa" class="btn btn-primary">📱 Pedir Ahora</a>
                 <a href="#productos" class="btn btn-secondary">Ver Productos</a>
             </div>
         </div>
@@ -709,43 +527,27 @@
             </div>
             <div class="stat">
                 <div class="stat-number">100%</div>
-                <div class="stat-label">Ingredientes Frescos</div>
+                <div class="stat-label">Artesanal</div>
             </div>
             <div class="stat">
                 <div class="stat-number">1000+</div>
                 <div class="stat-label">Clientes Felices</div>
             </div>
             <div class="stat">
-                <div class="stat-number">4</div>
-                <div class="stat-label">Variedades Premium</div>
+                <div class="stat-number">5</div>
+                <div class="stat-label">Variedades</div>
             </div>
         </div>
         
         <!-- Productos -->
         <section id="productos">
-            <h2>Nuestras Variedades</h2>
+            <h2>Nuestros Productos</h2>
             <div class="products-grid">
                 <div class="product">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1589985643862-17c34a87e09a?w=600&h=400&fit=crop" alt="Port Salut">
-                    </div>
-                    <div class="product-content">
-                        <div class="product-name">Port Salut</div>
-                        <p class="product-desc">Equilibrio perfecto de sabor y cremosidad. Ideal para tabla de quesos, sándwich gourmet o comer solo.</p>
-                        <div class="product-details">
-                            <div class="detail">Pasta Semidura</div>
-                            <div class="detail">Con/Sin Sal</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1618164436241-4473940571cd?w=600&h=400&fit=crop" alt="Cremoso">
-                    </div>
+                    <div class="product-image">🟨</div>
                     <div class="product-content">
                         <div class="product-name">Cremoso</div>
-                        <p class="product-desc">Suave, digestible y versátil. Perfecto para desayuno, merienda o acompañamiento de pan casero.</p>
+                        <p class="product-desc">Suave, digestible y versátil. Perfecto para desayuno, merienda o pan casero.</p>
                         <div class="product-details">
                             <div class="detail">Pasta Blanda</div>
                             <div class="detail">Muy Cremoso</div>
@@ -754,12 +556,22 @@
                 </div>
                 
                 <div class="product">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1599599810694-d3a0b4a1ce9e?w=600&h=400&fit=crop" alt="Tybo">
+                    <div class="product-image">🟨</div>
+                    <div class="product-content">
+                        <div class="product-name">Port Salut</div>
+                        <p class="product-desc">Equilibrio perfecto. Ideal para tabla de quesos, sándwich gourmet o comer solo.</p>
+                        <div class="product-details">
+                            <div class="detail">Pasta Semidura</div>
+                            <div class="detail">Con/Sin Sal</div>
+                        </div>
                     </div>
+                </div>
+                
+                <div class="product">
+                    <div class="product-image">🧡</div>
                     <div class="product-content">
                         <div class="product-name">Tybo</div>
-                        <p class="product-desc">Sabor robusto e intenso. Excelente para sándwich, fondue, tabla de quesos y como acompañamiento.</p>
+                        <p class="product-desc">Sabor robusto e intenso. Excelente para sándwich, fondue y tabla de quesos.</p>
                         <div class="product-details">
                             <div class="detail">Pasta Dura</div>
                             <div class="detail">Sabor Intenso</div>
@@ -768,16 +580,27 @@
                 </div>
                 
                 <div class="product">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1628185042941-e2e1ad12a3ac?w=600&h=400&fit=crop" alt="Muzzarella">
-                    </div>
+                    <div class="product-image">🔵</div>
                     <div class="product-content">
                         <div class="product-name">Muzzarella</div>
-                        <p class="product-desc">Fresca, elástica y derretible. La opción clásica para pizza, lasaña y recetas que requieren fundido.</p>
+                        <p class="product-desc">Fresca, elástica y derretible. La opción clásica para pizza, lasaña y recetas.</p>
                         <div class="product-details">
                             <div class="detail">Pasta Fresca</div>
                             <div class="detail">Derretible</div>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <div class="product-image">💎</div>
+                    <div class="product-content">
+                        <div class="product-name">Masa para Muzzarella</div>
+                        <p class="product-desc"><strong>🌟 NUESTRO MAYOR ORGULLO</strong><br>Reconocida por su sabor y rendimiento inigualables. Para los más exigentes.</p>
+                        <div class="product-details">
+                            <div class="detail">Pasta Prima</div>
+                            <div class="detail">Premium</div>
+                        </div>
+                        <div class="highlight-badge">⭐ PRODUCTO ESTRELLA</div>
                     </div>
                 </div>
             </div>
@@ -789,23 +612,23 @@
             <div class="features">
                 <div class="feature">
                     <div class="feature-icon">✨</div>
-                    <div class="feature-title">100% Artesanal</div>
-                    <p class="feature-text">Hecho a mano con recetas familiares. Sin aditivos ni conservantes artificiales.</p>
+                    <div class="feature-title">Artesanal 100%</div>
+                    <p class="feature-text">Hecho a mano con recetas familiares. Sin aditivos ni conservantes.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🥛</div>
                     <div class="feature-title">Ingredientes Premium</div>
-                    <p class="feature-text">Solo leche fresca de los mejores productores. Cero compromisos en calidad.</p>
+                    <p class="feature-text">Solo leche fresca de los mejores productores. Cero compromisos.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🏅</div>
                     <div class="feature-title">Premiados</div>
-                    <p class="feature-text">Reconocidos nacionalmente. Medalla de Plata en Concurso Nacional de Quesos.</p>
+                    <p class="feature-text">Reconocidos nacionalmente. Medalla de Plata en Concurso Nacional.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">📦</div>
-                    <div class="feature-title">Entrega Rápida</div>
-                    <p class="feature-text">Disponible en Chivilcoy y zona cercana. Mismo día si ordenas a tiempo.</p>
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-title">Calidad al Mejor Precio</div>
+                    <p class="feature-text">Producción directa. Sin intermediarios. Precio justo garantizado.</p>
                 </div>
             </div>
         </section>
@@ -823,7 +646,7 @@
                     <div class="award-card">
                         <div class="award-icon">📜</div>
                         <div class="award-title">Diploma de Reconocimiento</div>
-                        <p class="award-desc"><strong>Maestría de Desarrollo</strong><br>y Promoción de Buenos Aires<br>Excelencia Artesanal</p>
+                        <p class="award-desc"><strong>Ministerio de Desarrollo Agrario</strong><br>Provincia de Buenos Aires<br>Por Excelencia Artesanal</p>
                     </div>
                 </div>
             </div>
@@ -833,7 +656,7 @@
     <!-- CTA Final -->
     <section class="cta-section" id="contacto">
         <h2>¿Listo para Probar?</h2>
-        <p>Hoy mismo en tu mesa. Contactanos sin compromiso.</p>
+        <p>Hoy mismo en tu mesa. Contactanos ahora.</p>
         
         <div class="contact-info">
             <div class="contact-item">
@@ -850,10 +673,10 @@
             </div>
         </div>
         
-        <a href="https://wa.me/542346513496?text=Hola!%20Quiero%20hacer%20mi%20primer%20pedido%20de%20quesos%20Huella%20Pampa." class="btn btn-primary">Enviar Mensaje por WhatsApp</a>
+        <a href="https://wa.me/542346513496?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20quesos%20Huella%20Pampa" class="btn btn-primary">Enviar Mensaje por WhatsApp</a>
         
         <div class="social-share">
-            <a href="https://wa.me/?text=Descubrí%20estos%20quesos%20artesanales%20increíbles:%20Huella%20Pampa%20-%20https://nailauuren.github.io/Huella-Pampa/" class="social-btn" target="_blank">🟢 Compartir en WhatsApp</a>
+            <a href="https://wa.me/?text=Descubrí%20estos%20quesos%20increíbles:%20Huella%20Pampa%20-%20https://nailauuren.github.io/Huella-Pampa/" class="social-btn" target="_blank">🟢 Compartir en WhatsApp</a>
             <a href="https://www.instagram.com/lacteoshuellapampa/" class="social-btn" target="_blank">📷 Seguir en Instagram</a>
         </div>
     </section>
@@ -862,7 +685,7 @@
     <footer>
         <p><strong>Huella Pampa</strong> | Quesos Artesanales Familiares</p>
         <p>Gorostiaga, Buenos Aires, Argentina</p>
-        <p>Hecho con ❤️ para los amantes del buen queso</p>
+        <p>Calidad al mejor precio es nuestro compromiso 🧀</p>
     </footer>
 </body>
 </html>
